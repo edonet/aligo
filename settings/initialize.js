@@ -35,7 +35,6 @@ module.exports = ({ cwd, dir, ...settings }) => ({
     publicPath: './',
     alias: {
         ...settings.alias,
-        ailo: 'ailo/lib',
         aligo: dir('lib'),
         selector: dir('lib/selector'),
         style: dir('lib/style'),

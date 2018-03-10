@@ -13,7 +13,8 @@
  *****************************************
  */
 import React from 'react';
-import render from 'aligo';
+import render, { AppContainer } from 'aligo';
+import App from './app';
 
 
 /**
@@ -21,4 +22,25 @@ import render from 'aligo';
  * 加载文件
  *****************************************
  */
-render(<div>Hi@!@</div>, 'app');
+render((
+    <AppContainer><App /></AppContainer>
+), 'app');
+
+
+/**
+ *****************************************
+ * 启用热更新
+ *****************************************
+ */
+if (module.hot) {
+
+    // 接收模块更新
+    module.hot.accept(['aligo', './app'], () => {
+        let app = require('./app');
+
+        // 渲染组件
+        render((
+            <AppContainer><app.default /></AppContainer>
+        ), 'app');
+    });
+}

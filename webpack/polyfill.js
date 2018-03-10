@@ -16,7 +16,7 @@ if (process.env.NODE_ENV === 'development') {
     let addEventListener = window.addEventListener;
 
     window.addEventListener = (type, handler, options) => {
-        if (type !== 'beforeunload' || handler.toString().indexOf('isUnloading') === 0) {
+        if (type !== 'beforeunload') {
             return addEventListener(type, handler, options);
         }
     };

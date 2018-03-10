@@ -16,7 +16,7 @@ const code = (
     '\n\n' +
     '// es6 module\n' +
     'exports.locals["__esModule"] = true;\n' +
-    'exports.locals["default"] = require("ailo/className")(exports.locals);\n'
+    'exports.locals["default"] = require("ailo/lib/className")(exports.locals);\n'
 );
 
 

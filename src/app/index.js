@@ -1,7 +1,7 @@
 /**
  *****************************************
  * Created by lifx
- * Created on 2018-03-09 17:25:09
+ * Created on 2018-03-10 18:00:40
  *****************************************
  */
 'use strict';
@@ -12,17 +12,15 @@
  * 加载依赖
  *****************************************
  */
-import mount, { unmount } from 'ailo/lib/mount';
-import style from './style';
-import AppContainer from './app-container';
-import AppView from './app-view';
+import React from 'react';
+import { AppView } from 'aligo';
 
 
 /**
  *****************************************
- * 抛出接口
+ * 【App】组件
  *****************************************
  */
-export default mount;
-export { unmount, style };
-export { AppContainer, AppView };
+export default function App() {
+    return <AppView path="about">app@!@!</AppView>;
+}
