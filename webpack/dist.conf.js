@@ -33,29 +33,13 @@ module.exports = settings => ({
             'babel-polyfill', settings.entry
         ]
     },
+    mode: 'production',
     plugins: [
         new webpack.DefinePlugin({
             'process.env.NODE_ENV': JSON.stringify(settings.env)
         }),
         new webpack.optimize.ModuleConcatenationPlugin(),
         new webpack.optimize.AggressiveMergingPlugin(),
-        new webpack.optimize.UglifyJsPlugin({
-            compress: {
-                warnings: false,
-                drop_debugger: true,
-                drop_console: true
-            },
-            sourceMap: !settings.isProduction
-        }),
-        new webpack.optimize.CommonsChunkPlugin({
-            name: 'vendor',
-            minChunks: function (module) {
-                return module.context && module.context.indexOf('node_modules') !== -1;
-            }
-        }),
-        new webpack.optimize.CommonsChunkPlugin({
-            name: 'manifest'
-        }),
         new ExtractTextPlugin('css/[name]-[contenthash].css'),
         new OutputWebpackPlugin({ data: settings.settings }),
         new HtmlWebpackPlugin({

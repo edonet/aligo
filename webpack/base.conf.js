@@ -40,5 +40,20 @@ module.exports = settings => ({
     module: {
         rules: rules(settings),
         noParse: /\.min(\.[\w]+)?$/
+    },
+    optimization: {
+        minimize: settings.isProduction,
+        runtimeChunk: {
+            name: 'manifest'
+        },
+        splitChunks: {
+            cacheGroups: {
+                commons: {
+                    test: /[\\/]node_modules[\\/]/,
+                    name: 'vendor',
+                    chunks: 'all'
+                }
+            }
+        }
     }
 });
