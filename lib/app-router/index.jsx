@@ -1,7 +1,7 @@
 /**
  *****************************************
  * Created by lifx
- * Created on 2018-03-12 20:00:49
+ * Created on 2018-03-12 22:18:08
  *****************************************
  */
 'use strict';
@@ -18,26 +18,23 @@ import history from '../history';
 
 /**
  *****************************************
- * 创建历史对象上下文
+ * 创建上下文
  *****************************************
  */
-const AppHistoryContext = createContext({ history });
+export const AppHistoryContext = createContext({ history });
 
 
 /**
  *****************************************
- * 历史对象组件
+ * 路由器组件
  *****************************************
  */
-export default AppHistoryContext.Consumer;
+export default class AppRouter extends Component {
 
-
-/**
- *****************************************
- * 历史对象监听组件
- *****************************************
- */
-export class AppHistoryProvider extends Component {
+    /* 更新前处理 */
+    componentWillUpdate() {
+        console.log('willUpdate');
+    }
 
     /* 渲染组件 */
     render() {
@@ -51,6 +48,12 @@ export class AppHistoryProvider extends Component {
     /* 挂载完成后处理 */
     componentDidMount() {
         this.$$unsubscribe = history.subscribe(() => this.forceUpdate());
+        this.componentDidUpdate();
+    }
+
+    /* 更新完成后处理 */
+    componentDidUpdate() {
+        console.log('didUpdate');
     }
 
     /* 卸载前处理 */
