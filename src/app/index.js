@@ -22,5 +22,9 @@ import { AppView } from 'aligo';
  *****************************************
  */
 export default function App() {
-    return <AppView path="about">app@!@!</AppView>;
+    return (
+        <AppView path="user">
+            <AppView path="about">app@!@!</AppView>
+        </AppView>
+    );
 }

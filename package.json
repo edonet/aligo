@@ -17,8 +17,8 @@
     "dependencies": {
         "ailo": "^0.0.1",
         "history": "^4.7.2",
-        "react": "^16.2.0",
-        "react-dom": "^16.2.0"
+        "react": "^16.3.0-alpha.1",
+        "react-dom": "^16.3.0-alpha.1"
     },
     "devDependencies": {
         "autoprefixer": "^8.1.0",
