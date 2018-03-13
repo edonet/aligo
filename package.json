@@ -15,7 +15,7 @@
         "dist": "node scripts/dist.js"
     },
     "dependencies": {
-        "ailo": "^0.0.1",
+        "ailo": "^0.0.101",
         "history": "^4.7.2",
         "react": "^16.3.0-alpha.1",
         "react-dom": "^16.3.0-alpha.1"

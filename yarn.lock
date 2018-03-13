@@ -51,9 +51,9 @@ acorn@^5.0.0, acorn@^5.3.0:
   version "5.5.3"
   resolved "https://registry.npmjs.org/acorn/-/acorn-5.5.3.tgz#f473dd47e0277a08e28e9bec5aeeb04751f0b8c9"
 
-ailo@^0.0.1:
-  version "0.0.1"
-  resolved "https://registry.npmjs.org/ailo/-/ailo-0.0.1.tgz#c325173bed77ae33aacc0c6e1becc5b3139830f1"
+ailo@^0.0.101:
+  version "0.0.101"
+  resolved "https://registry.npmjs.org/ailo/-/ailo-0.0.101.tgz#9fe45fdf749c7703c7c7c41b1f5d0a6ee238a6c8"
 
 ajv-keywords@^3.1.0:
   version "3.1.0"
